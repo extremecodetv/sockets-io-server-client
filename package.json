@@ -1,0 +1,19 @@
+{
+  "name": "sockets-css-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "node ./server"
+  },
+  "keywords": [],
+  "author": "Artem Dontsov",
+  "license": "MIT",
+  "dependencies": {
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "standard": "^14.3.4"
+  }
+}

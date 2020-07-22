@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.min.js"></script>
+</head>
+<body>
+    <a id="target" data-role="button"  onclick="requestStyle();">Click on Button for request style</a>
+    <script>
+      const socket = io('http://localhost:8081', {
+        path: '/css'
+      });
+
+      socket.on('style', function (context) {
+        console.log(context)
+        // Логика впендюривания CSS в нужное место
+      });
+
+      function requestStyle() {
+        console.log('clicked')
+        // Запрос нужного стиля
+        socket.emit('get_style', { style: 'a'} )
+        socket.emit('get_style', { style: 'b'} )
+        socket.emit('get_style', { style: 'c'} )
+      }
+    </script>
+</body>
+</html>
